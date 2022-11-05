@@ -1,26 +1,77 @@
-html,
+/* ./styles/globals.css */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 body {
-  padding: 0;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  @apply bg-slate-50 text-slate-800;
 }
 
 a {
-  color: inherit;
-  text-decoration: none;
+  @apply underline;
 }
 
-* {
-  box-sizing: border-box;
+/* COMPONENTS */
+.site-header {
+  @apply sticky top-0 w-full p-4 px-6 bg-white z-10;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
-  body {
-    color: white;
-    background: black;
-  }
+.site-header > .wrapper {
+  @apply flex gap-8 justify-between max-w-6xl m-auto;
+}
+
+.site-nav .links {
+  @apply flex flex-col gap-6;
+}
+
+.articles-header {
+  @apply p-12 py-24 bg-slate-800 text-slate-50;
+}
+
+.articles-header > .wrapper {
+  @apply max-w-6xl m-auto;
+}
+
+.articles {
+  @apply flex flex-col gap-8 p-12 max-w-5xl m-auto;
+}
+
+.article-item-header {
+  @apply flex flex-wrap gap-8 items-center;
+}
+
+.site-article {
+  @apply relative;
+}
+
+.site-article .article-content {
+  @apply p-12 pb-24 max-w-6xl m-auto;
+}
+
+.article-header {
+  @apply relative bg-slate-800 text-slate-100;
+}
+
+.article-header > .wrapper {
+  @apply flex flex-col gap-4 p-24 px-12 max-w-7xl m-auto;
+}
+
+.info-box {
+  @apply bg-slate-700 text-slate-100 p-4 rounded-lg my-4;
+}
+
+.info-box.warning {
+  @apply bg-yellow-400 text-yellow-800;
+}
+.info-box.error {
+  @apply bg-red-600 text-red-50;
+}
+
+.info-box summary {
+  @apply font-bold cursor-pointer;
+}
+
+.blockquote {
+  @apply bg-slate-300 border-l-slate-700 p-2 pl-8 text-4xl font-extralight text-slate-800 rounded-r-xl;
 }
